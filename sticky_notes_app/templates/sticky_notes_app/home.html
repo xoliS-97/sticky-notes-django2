@@ -10,8 +10,10 @@
         <h5 class="card-title">{{ note.title }}</h5>
         <p class="card-text">{{ note.content }}</p>
         <p class="card-text"><small class="text-muted">{{ note.created_at }}</small></p>
-        <a href="{% url 'edit_note' note.id %}" class="btn btn-sm btn-warning">Edit</a>
-        <a href="{% url 'delete_note' note.id %}" class="btn btn-sm btn-danger">Delete</a>
+        {% if note.id %}
+          <a href="{% url 'edit_note' note.id %}" class="btn btn-sm btn-warning">Edit</a>
+          <a href="{% url 'delete_note' note.id %}" class="btn btn-sm btn-danger">Delete</a>
+        {% endif %}
       </div>
     </div>
   {% empty %}

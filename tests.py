@@ -2,7 +2,7 @@ from django.test import TestCase
 from django.urls import reverse
 from .models import Note
 
-class TestNoteModel(TestCase):
+class NoteModelTest(TestCase):
     def setUp(self):
         Note.objects.create(title='Test Note', content='This is a test note.')
 
@@ -14,7 +14,7 @@ class TestNoteModel(TestCase):
         note = Note.objects.get(id=1)
         self.assertEqual(note.content, 'This is a test note.')
 
-class TestNoteView(TestCase):
+class NoteViewTest(TestCase):
     def setUp(self):
         Note.objects.create(title='Test Note', content='This is a test note.')
 
