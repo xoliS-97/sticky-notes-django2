@@ -3,5 +3,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('sticky_notes_app.urls')),
+    path('', include('ecommerce.urls')),  # ✅ This connects your app
 ]

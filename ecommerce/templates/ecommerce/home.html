@@ -1,0 +1,12 @@
+{% extends 'ecommerce/base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <div class="text-center">
+        <h1 class="mt-5">Welcome to the eCommerce App</h1>
+        {% if user.is_authenticated %}
+            <p class="lead">Glad to see you, {{ user.username }}!</p>
+        {% else %}
+            <p class="lead">Please <a href="{% url 'login' %}">log in</a> or <a href="{% url 'register' %}">register</a> to continue.</p>
+        {% endif %}
+    </div>
+{% endblock %}

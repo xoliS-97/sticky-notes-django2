@@ -1,0 +1,13 @@
+<h1>Product Catalog</h1>
+<ul>
+  {% for product in products %}
+    <li>
+      <strong>{{ product.name }}</strong><br>
+      {{ product.description }}<br>
+      Price: R{{ product.price }}<br>
+      {% if product.image %}
+        <img src="{{ product.image.url }}" width="150">
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
